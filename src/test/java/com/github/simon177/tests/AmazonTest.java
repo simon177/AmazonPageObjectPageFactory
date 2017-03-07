@@ -1,13 +1,10 @@
 package com.github.simon177.tests;
 
-import com.github.simon177.components.Navigator;
 import com.github.simon177.pages.*;
-import org.junit.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import javax.swing.*;
-import java.util.concurrent.TimeUnit;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * Created by simon on 05.03.2017.
@@ -50,6 +47,13 @@ public class AmazonTest extends TestConfiguration {
         Assert.assertEquals("Added to Cart",confirm.getConfirmation());
         CartPage cart = homePage.naviGator().goToCartPage();
         cart.CartList().contains(title);
+    }
+    @Test
+    public void RemovingItemfromACart(){
+        AmazonAddingToCartTest();
+        CartPage cart  = homePage.naviGator().goToCartPage();
+        cart.deleteItem();
+        cart.getRemoveList().contains("was removed from Shopping Cart");
     }
     }
 

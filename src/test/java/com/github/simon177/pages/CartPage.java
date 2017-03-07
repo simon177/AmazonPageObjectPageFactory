@@ -14,11 +14,22 @@ public class CartPage {
     WebDriver driver;
     @FindBy(how= How.CLASS_NAME, using = "a-list-item")
     private WebElement list;
+    @FindBy(how=How.CSS, using = "[name='submit.delete.C3QHNZMXYCK6SQ']")
+    private WebElement deleteButton;
+    @FindBy(how=How.CLASS_NAME, using = "sc-list-item-removed-msg")
+    private WebElement Removedlist;
     public CartPage(WebDriver driver){
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
     public String CartList(){
         return list.getText();
+    }
+    public CartPage deleteItem(){
+        deleteButton.click();
+        return this;
+    }
+    public String getRemoveList(){
+        return Removedlist.getText();
     }
 }
