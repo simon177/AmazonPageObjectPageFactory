@@ -4,6 +4,9 @@ import com.github.simon177.components.Navigator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 
 import java.sql.Driver;
@@ -13,12 +16,12 @@ import java.sql.Driver;
  */
 public class Homepage {
     private static WebDriver driver;
-    private final Navigator naviGator;
+    @FindBy(how= How.ID, using = "nav-link-accountList")
+    private WebElement signInButton;
     private final static String LINK  = "https://www.amazon.com";
-    private final static By SIGN_IN_BUTTON = By.id("nav-link-accountList");
     public Homepage(WebDriver driver){
+        PageFactory.initElements(driver, this);
         this.driver = driver;
-        this.naviGator = new Navigator(driver);
     }
 
     public Homepage goTo(){
@@ -27,12 +30,12 @@ public class Homepage {
     }
 
     public LoginPage GoToLogInPage(){
-        driver.findElement(SIGN_IN_BUTTON).click();
+        signInButton.click();
         return new LoginPage(driver);
     }
 
     public Navigator naviGator(){
-        return naviGator;
+        return new Navigator(driver);
     }
 
 }

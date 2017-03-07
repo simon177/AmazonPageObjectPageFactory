@@ -12,16 +12,14 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by simon on 05.03.2017.
  */
-public class AmazonTest {
-    WebDriver driver;
+public class AmazonTest extends TestConfiguration {
     private Homepage homePage;
 
     @Before
-    public void setUp(){
-            System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
-            driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        }
+    public void runConf(){
+        super.setUp();
+    }
+
 
     @Before
     public void runHomepage() {

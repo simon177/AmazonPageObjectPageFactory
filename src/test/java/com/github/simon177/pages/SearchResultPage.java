@@ -2,24 +2,30 @@ package com.github.simon177.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by simon on 05.03.2017.
  */
 public class SearchResultPage {
     WebDriver driver;
-    private final static By FIRST_ELEMENT = By.xpath("//*[@id=\"result_0\"]/div/div/div/div[2]/div[2]/div[1]/a/h2");
+    @FindBy(how= How.XPATH, using = "//*[@id=\"result_0\"]/div/div/div/div[2]/div[2]/div[1]/a/h2")
+    private WebElement firstElement;
 
     public SearchResultPage(WebDriver driver){
+        PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
     public String getFirstElTitle(){
-        return driver.findElement(FIRST_ELEMENT).getAttribute("data-attribute");
+        return firstElement.getAttribute("data-attribute");
     }
 
     public ProductPage clickFirstElement(){
-        driver.findElement(FIRST_ELEMENT).click();
+        firstElement.click();
         return new ProductPage(driver);
     }
 
