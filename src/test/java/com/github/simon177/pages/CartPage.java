@@ -14,7 +14,7 @@ public class CartPage {
     WebDriver driver;
     @FindBy(how= How.CLASS_NAME, using = "a-list-item")
     private WebElement list;
-    @FindBy(how=How.CSS, using = "[name='submit.delete.C3QHNZMXYCK6SQ']")
+    @FindBy(how=How.CSS, using = "[name^='submit.delete.']")
     private WebElement deleteButton;
     @FindBy(how=How.CLASS_NAME, using = "sc-list-item-removed-msg")
     private WebElement Removedlist;
