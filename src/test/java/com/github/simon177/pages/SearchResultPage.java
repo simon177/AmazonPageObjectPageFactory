@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class SearchResultPage {
     WebDriver driver;
-    @FindBy(how= How.CSS, using = "[title='Absolute Beginner (Part 1) Selenium WebDriver for Functional Automation Testing: Your Beginners Guide (Black & White Edition) (Practical How To Selenium Tutorials)']")
+    @FindBy(how= How.CSS, using = "[title^='Absolute Beginner (Part 1) Selenium WebDriver']")
     private WebElement firstElement;
 
     public SearchResultPage(WebDriver driver){
