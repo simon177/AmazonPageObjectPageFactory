@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class CartConfirmationPage {
     WebDriver driver;
-    @FindBy(how= How.XPATH, using = "//*[@id=\"huc-v2-order-row-confirm-text\"]/h1")
+    @FindBy(how= How.XPATH, using = "//*[@id='huc-v2-order-row-confirm-text']/h1")
     private WebElement addedItem;
     public CartConfirmationPage(WebDriver driver) {
         PageFactory.initElements(driver, this);

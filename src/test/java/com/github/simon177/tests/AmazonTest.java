@@ -49,7 +49,7 @@ public class AmazonTest extends TestConfiguration {
         cart.CartList().contains(title);
     }
     @Test
-    public void RemovingItemfromACart(){
+    public void RemovingItemfromACartTest(){
         AmazonAddingToCartTest();
         CartPage cart  = homePage.naviGator().goToCartPage();
         cart.deleteItem();

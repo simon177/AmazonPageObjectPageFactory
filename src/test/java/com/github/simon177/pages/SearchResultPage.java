@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class SearchResultPage {
     WebDriver driver;
-    @FindBy(how= How.XPATH, using = "//*[@id=\"result_0\"]/div/div/div/div[2]/div[2]/div[1]/a/h2")
+    @FindBy(how= How.CSS, using = "[title='Absolute Beginner (Part 1) Selenium WebDriver for Functional Automation Testing: Your Beginners Guide (Black & White Edition) (Practical How To Selenium Tutorials)']")
     private WebElement firstElement;
 
     public SearchResultPage(WebDriver driver){
@@ -20,7 +20,7 @@ public class SearchResultPage {
     }
 
     public String getFirstElTitle(){
-        return firstElement.getAttribute("data-attribute");
+        return firstElement.getAttribute("title");
     }
 
     public ProductPage clickFirstElement(){
