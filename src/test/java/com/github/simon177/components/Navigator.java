@@ -20,7 +20,7 @@ public class Navigator {
     private WebElement dropdown;
     @FindBy(how=How.ID,using = "twotabsearchtextbox")
     private WebElement searchbox;
-    @FindBy(how=How.XPATH,using = "//*[@id=\"nav-search\"]/form/div[2]/div/input")
+    @FindBy(how=How.CSS,using = "input[type='submit'][class='nav-input']")
     private WebElement searchButton;
     @FindBy(how=How.ID,using = "nav-cart")
     private WebElement cartButton;
