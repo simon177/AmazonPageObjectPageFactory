@@ -12,8 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by simon on 05.03.2017.
  */
-public class AfterLoginPage {
-    private WebDriver driver;
+public class AfterLoginPage extends BasePage {
     @FindBy(how= How.ID, using = "nav-link-accountList")
     private WebElement loginBox;
     @FindBy(how=How.ID, using = "nav-item-signout")
@@ -21,7 +20,7 @@ public class AfterLoginPage {
 
     public AfterLoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.driver = driver;
+        super.driver = driver;
     }
 
     public String getUsername() {

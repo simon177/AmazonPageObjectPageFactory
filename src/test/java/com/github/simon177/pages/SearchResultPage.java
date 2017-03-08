@@ -9,14 +9,13 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by simon on 05.03.2017.
  */
-public class SearchResultPage {
-    WebDriver driver;
+public class SearchResultPage extends BasePage {
     @FindBy(how= How.CSS, using = "[title^='Absolute Beginner (Part 1) Selenium WebDriver']")
     private WebElement firstElement;
 
     public SearchResultPage(WebDriver driver){
         PageFactory.initElements(driver, this);
-        this.driver = driver;
+        super.driver = driver;
     }
 
     public String getFirstElTitle(){

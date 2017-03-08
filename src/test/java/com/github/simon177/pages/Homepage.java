@@ -14,14 +14,13 @@ import java.sql.Driver;
 /**
  * Created by simon on 05.03.2017.
  */
-public class Homepage {
-    private static WebDriver driver;
+public class Homepage extends BasePage {
     @FindBy(how= How.ID, using = "nav-link-accountList")
     private WebElement signInButton;
     private final static String LINK  = "https://www.amazon.com";
     public Homepage(WebDriver driver){
         PageFactory.initElements(driver, this);
-        this.driver = driver;
+        super.driver = driver;
     }
 
     public Homepage goTo(){

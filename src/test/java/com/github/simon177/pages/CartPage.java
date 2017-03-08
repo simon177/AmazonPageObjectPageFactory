@@ -10,8 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by simon on 05.03.2017.
  */
-public class CartPage {
-    WebDriver driver;
+public class CartPage extends BasePage{
     @FindBy(how= How.CLASS_NAME, using = "a-list-item")
     private WebElement list;
     @FindBy(how=How.CSS, using = "[name^='submit.delete.']")
@@ -20,7 +19,7 @@ public class CartPage {
     private WebElement Removedlist;
     public CartPage(WebDriver driver){
         PageFactory.initElements(driver, this);
-        this.driver = driver;
+        super.driver = driver;
     }
     public String CartList(){
         return list.getText();

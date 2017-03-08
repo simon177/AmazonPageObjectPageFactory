@@ -10,15 +10,14 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by simon on 05.03.2017.
  */
-public class ProductPage {
-    WebDriver driver;
+public class ProductPage extends BasePage  {
     @FindBy(how= How.ID, using = "add-to-cart-button")
     private WebElement addingToCartButton;
     @FindBy(how= How.ID, using = "productTitle")
     private WebElement productTitle;
     public ProductPage(WebDriver driver){
         PageFactory.initElements(driver, this);
-        this.driver = driver;
+        super.driver = driver;
     }
     public CartConfirmationPage addProductToCart(){
         addingToCartButton.click();
