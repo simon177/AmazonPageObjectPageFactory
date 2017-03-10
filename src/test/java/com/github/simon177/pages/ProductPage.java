@@ -16,8 +16,8 @@ public class ProductPage extends BasePage  {
     @FindBy(how= How.ID, using = "productTitle")
     private WebElement productTitle;
     public ProductPage(WebDriver driver){
-        PageFactory.initElements(driver, this);
         super.driver = driver;
+        PageFactory.initElements(driver, this);
     }
     public CartConfirmationPage addProductToCart(){
         addingToCartButton.click();

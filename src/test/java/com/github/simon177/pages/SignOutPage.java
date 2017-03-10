@@ -15,8 +15,8 @@ public class SignOutPage extends BasePage {
     private WebElement firstElement;
 
     public SignOutPage(WebDriver driver){
-        PageFactory.initElements(driver, this);
         super.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public String getSignOutTitle(){

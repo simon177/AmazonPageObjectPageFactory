@@ -18,8 +18,8 @@ public class CartPage extends BasePage{
     @FindBy(how=How.CLASS_NAME, using = "sc-list-item-removed-msg")
     private WebElement Removedlist;
     public CartPage(WebDriver driver){
-        PageFactory.initElements(driver, this);
         super.driver = driver;
+        PageFactory.initElements(driver, this);
     }
     public String CartList(){
         return list.getText();

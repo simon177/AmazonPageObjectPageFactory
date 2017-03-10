@@ -24,10 +24,10 @@ public class AmazonTest extends TestConfiguration {
         homePage.goTo();
     }
 
-    @After
-    public void tearDown(){
+    //@After
+    /*public void tearDown(){
         driver.quit();
-        }
+        }*/
     @Test
     public void AmazonLoginTest(){
         LoginPage login = homePage.GoToLogInPage();
@@ -54,6 +54,13 @@ public class AmazonTest extends TestConfiguration {
         CartPage cart  = homePage.naviGator().goToCartPage();
         cart.deleteItem();
         cart.getRemoveList().contains("was removed from Shopping Cart");
+    }
+    @Test
+    public void CreateAccount() {
+        RegistrationPage register  = homePage.goToRegistrationPage();
+        String[] credentials = {"Test123","testemail@test.pl","1234567"};
+        register.createAccount(credentials[0], credentials[1], credentials[2]);
+        register.getUsername().equals(credentials[0]);
     }
     }
 

@@ -14,8 +14,8 @@ public class SearchResultPage extends BasePage {
     private WebElement firstElement;
 
     public SearchResultPage(WebDriver driver){
-        PageFactory.initElements(driver, this);
         super.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public String getFirstElTitle(){

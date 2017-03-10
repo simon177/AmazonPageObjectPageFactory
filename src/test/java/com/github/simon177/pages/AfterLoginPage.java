@@ -13,25 +13,24 @@ import org.openqa.selenium.support.PageFactory;
  * Created by simon on 05.03.2017.
  */
 public class AfterLoginPage extends BasePage {
-    @FindBy(how= How.ID, using = "nav-link-accountList")
-    private WebElement loginBox;
+
     @FindBy(how=How.ID, using = "nav-item-signout")
     private WebElement signOutButton;
 
     public AfterLoginPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
         super.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public String getUsername() {
-
-        return loginBox.getText();
+        return super.getUsername();
     }
+
 
     public void hoverMyAcount() {
-        Actions action = new Actions(driver);
-        action.moveToElement(loginBox).build().perform();
+        super.hoverMyAcount();
     }
+
     public SignOutPage SignOut() {
         signOutButton.click();
         return new SignOutPage(driver);
